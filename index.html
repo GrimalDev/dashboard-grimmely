@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grimmely Home Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Function to generate random Tailwind color classes
+      function getRandomColor() {
+        const colors = [
+          "red",
+          "blue",
+          "green",
+          "yellow",
+          "purple",
+          "pink",
+          "indigo",
+          "teal",
+          "cyan",
+          "orange",
+        ];
+        const shades = ["50", "100"];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const shade = shades[Math.floor(Math.random() * shades.length)];
+        return {
+          bg: `bg-${color}-${shade}`,
+          hover: `hover:bg-${color}-${Number(shade) + 100}`,
+          text: `text-${color}-700`,
+          subtext: `text-${color}-500`,
+        };
+      }
+
+      // Apply random colors to cards on load
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          const { bg, hover, text, subtext } = getRandomColor();
+          card.classList.add(bg, hover, text);
+          card.querySelector("p").classList.add(subtext);
+        });
+      });
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-indigo-100 to-purple-100 min-h-screen flex flex-col items-center justify-center p-6"
+    :
+  >
+    <h1 class="text-4xl font-bold text-indigo-800 mb-8">
+      Grimaldev Home Services
+    </h1>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl w-full"
+    >
+      <!-- Sonarr -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Sonarr</h2>
+        <p>TV Show Management</p>
+      </a>
+      <!-- Prowlarr -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Prowlarr</h2>
+        <p>Indexer Management</p>
+      </a>
+      <!-- Radarr -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Radarr</h2>
+        <p>Movie Management</p>
+      </a>
+      <!-- Transmission -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Transmission</h2>
+        <p>Torrent Client</p>
+      </a>
+      <!-- Plex -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Plex</h2>
+        <p>Media Server</p>
+      </a>
+      <!-- Changedetection -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Changedetection</h2>
+        <p>Website Monitoring</p>
+      </a>
+      <!-- Traefik -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Traefik</h2>
+        <p>Reverse Proxy</p>
+      </a>
+      <!-- phpMyAdmin -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">phpMyAdmin</h2>
+        <p>Database Management</p>
+      </a>
+      <!-- Homebridge -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Homebridge</h2>
+        <p>Smart Home Hub</p>
+      </a>
+      <!-- NAS -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">NAS</h2>
+        <p>Qnap storage manager</p>
+      </a>
+      <!-- Dockploy -->
+      <a
+        href="http://grimmely.local/"
+        target="_blank"
+        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+      >
+        <h2 class="text-xl font-semibold">Dockploy</h2>
+        <p>Docker Deployment Manager</p>
+      </a>
+    </div>
+  </body>
+</html>
