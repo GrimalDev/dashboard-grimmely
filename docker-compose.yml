@@ -1,3 +1,0 @@
-services:
-  main-dashboard:
-    image: nginx:alpine
