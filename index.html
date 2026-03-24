@@ -1,156 +1,156 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grimmely Home Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Function to generate random Tailwind color classes
-      function getRandomColor() {
-        const colors = [
-          "red",
-          "blue",
-          "green",
-          "yellow",
-          "purple",
-          "pink",
-          "indigo",
-          "teal",
-          "cyan",
-          "orange",
-        ];
-        const shades = ["50", "100"];
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const shade = shades[Math.floor(Math.random() * shades.length)];
-        return {
-          bg: `bg-${color}-${shade}`,
-          hover: `hover:bg-${color}-${Number(shade) + 100}`,
-          text: `text-${color}-700`,
-          subtext: `text-${color}-500`,
-        };
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grimmely Home Dashboard</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Function to generate random Tailwind color classes
+            function getRandomColor() {
+                const colors = [
+                    "red",
+                    "blue",
+                    "green",
+                    "yellow",
+                    "purple",
+                    "pink",
+                    "indigo",
+                    "teal",
+                    "cyan",
+                    "orange",
+                ];
+                const shades = ["50", "100"];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const shade = shades[Math.floor(Math.random() * shades.length)];
+                return {
+                    bg: `bg-${color}-${shade}`,
+                    hover: `hover:bg-${color}-${Number(shade) + 100}`,
+                    text: `text-${color}-700`,
+                    subtext: `text-${color}-500`,
+                };
+            }
 
-      // Apply random colors to cards on load
-      document.addEventListener("DOMContentLoaded", () => {
-        const cards = document.querySelectorAll(".card");
-        cards.forEach((card) => {
-          const { bg, hover, text, subtext } = getRandomColor();
-          card.classList.add(bg, hover, text);
-          card.querySelector("p").classList.add(subtext);
-        });
-      });
-    </script>
-  </head>
-  <body
-    class="bg-gradient-to-br from-indigo-100 to-purple-100 min-h-screen flex flex-col items-center justify-center p-6"
-    :
-  >
-    <h1 class="text-4xl font-bold text-indigo-800 mb-8">
-      Grimmely Home Services
-    </h1>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl w-full"
+            // Apply random colors to cards on load
+            document.addEventListener("DOMContentLoaded", () => {
+                const cards = document.querySelectorAll(".card");
+                cards.forEach((card) => {
+                    const { bg, hover, text, subtext } = getRandomColor();
+                    card.classList.add(bg, hover, text);
+                    card.querySelector("p").classList.add(subtext);
+                });
+            });
+        </script>
+    </head>
+    <body
+        class="bg-gradient-to-br from-indigo-100 to-purple-100 min-h-screen flex flex-col items-center justify-center p-6"
+        :
     >
-      <!-- whisparr -->
-      <a
-        href="http://192.168.1.90:6767/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Sonarr</h2>
-        <p>Subtitles Management</p>
-      </a>
-      <!-- Sonarr -->
-      <a
-        href="http://192.168.1.90:8989/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Sonarr</h2>
-        <p>TV Show Management</p>
-      </a>
-      <!-- Prowlarr -->
-      <a
-        href="http://192.168.1.90:9696/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Prowlarr</h2>
-        <p>Indexer Management</p>
-      </a>
-      <!-- Radarr -->
-      <a
-        href="http://192.168.1.90:7878/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Radarr</h2>
-        <p>Movie Management</p>
-      </a>
-      <!-- Transmission -->
-      <a
-        href="http://192.168.1.90:9091/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Transmission</h2>
-        <p>Torrent Client</p>
-      </a>
-      <!-- Plex -->
-      <a
-        href="http://192.168.1.90:32400/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Plex</h2>
-        <p>Media Server</p>
-      </a>
-      <!-- Traefik -->
-      <a
-        href="https://traefik.grimmely.local/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Traefik</h2>
-        <p>Reverse Proxy</p>
-      </a>
-      <!-- NAS -->
-      <a
-        href="http://192.168.1.90:8080"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">NAS</h2>
-        <p>Qnap storage manager</p>
-      </a>
-      <!-- Dockploy -->
-      <a
-        href="https://dokploy.grimmely.local/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Dockploy</h2>
-        <p>Docker Deployment Manager</p>
-      </a>
-      <!-- DNS -->
-      <a
-        href="https://dns.grimmely.local/"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">DNS</h2>
-        <p>DNSmask web conf</p>
-      </a>
-      <!-- ipmi plex server -->
-      <a
-        href="http://192.168.1.91"
-        target="_blank"
-        class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
-      >
-        <h2 class="text-xl font-semibold">Plex Server Status</h2>
-        <p>Ilo plex server</p>
-      </a>
-    </div>
-  </body>
+        <h1 class="text-4xl font-bold text-indigo-800 mb-8">
+            Grimmely Home Services
+        </h1>
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl w-full"
+        >
+            <!-- whisparr -->
+            <a
+                href="https://bazarr.plex.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Bazarr</h2>
+                <p>Subtitles Management</p>
+            </a>
+            <!-- Sonarr -->
+            <a
+                href="https://sonarr.plex.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Sonarr</h2>
+                <p>TV Show Management</p>
+            </a>
+            <!-- Prowlarr -->
+            <a
+                href="https://prowlarr.plex.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Prowlarr</h2>
+                <p>Indexer Management</p>
+            </a>
+            <!-- Radarr -->
+            <a
+                href="https://radarr.plex.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Radarr</h2>
+                <p>Movie Management</p>
+            </a>
+            <!-- Transmission -->
+            <a
+                href="https://transmission.plex.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Transmission</h2>
+                <p>Torrent Client</p>
+            </a>
+            <!-- Plex -->
+            <a
+                href="https://plex.plex.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Plex</h2>
+                <p>Media Server</p>
+            </a>
+            <!-- Traefik -->
+            <a
+                href="https://traefik.grimmely.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Traefik</h2>
+                <p>Reverse Proxy</p>
+            </a>
+            <!-- NAS -->
+            <a
+                href="http://192.168.1.90:8080"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">NAS</h2>
+                <p>Qnap storage manager</p>
+            </a>
+            <!-- Dockploy -->
+            <a
+                href="https://dokploy.grimmely.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Dockploy</h2>
+                <p>Docker Deployment Manager</p>
+            </a>
+            <!-- DNS -->
+            <a
+                href="https://dns.grimmely.local/"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">DNS</h2>
+                <p>DNSmask web conf</p>
+            </a>
+            <!-- ipmi plex server -->
+            <a
+                href="http://192.168.1.91"
+                target="_blank"
+                class="card block rounded-xl shadow-lg hover:scale-105 transition transform p-6 text-center"
+            >
+                <h2 class="text-xl font-semibold">Plex Server Status</h2>
+                <p>Ilo plex server</p>
+            </a>
+        </div>
+    </body>
 </html>
